@@ -23,7 +23,7 @@ function rockPaperScissors (playerSelection, computerSelection) {
     computerSelectionClean = computerSelection.toLowerCase().slice(0,1); //Lowercase and slices first character
 
     WinnerWinnerChickenDinner = ""; //Winner of this round variable 
-    console.log(playerSelection + "*********" + computerSelection); //output of choices (debugging)
+    // console.log(playerSelection + "*********" + computerSelection); //output of choices (debugging)
 
     if (playerSelectionClean == computerSelectionClean) { //checks for a draw scenario
         return WinnerWinnerChickenDinner = "Draw! You both picked " + playerSelection + " Play again";
@@ -41,4 +41,10 @@ function rockPaperScissors (playerSelection, computerSelection) {
     }
     
     return WinnerWinnerChickenDinner; //returns outcome of round
+
+}
+
+var listItem = document.getElementsByTagName('li')
+for (var i=0; i < listItem.length; i++) {
+    listItem[i].addEventListener("click", rockPaperScissors, false);
 }

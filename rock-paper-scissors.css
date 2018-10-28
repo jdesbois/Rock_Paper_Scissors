@@ -1,0 +1,11 @@
+ul {
+    list-style: none;
+
+}
+li {
+    display: inline-block  ;
+    border: 1px solid green;
+    background-color: green;
+    color: white;
+    padding: 15px; 
+}
