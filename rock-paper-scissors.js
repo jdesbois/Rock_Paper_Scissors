@@ -16,7 +16,7 @@ function computerPlay () { //generates random number between 1-3
 
 
 function rockPaperScissors (playerSelection, computerSelection) {
-    playerSelection = prompt("Rock, Paper or Scissors?"); //Prompts for Player input
+    playerSelection = playerSelection;
     computerSelection = computerPlay(); //runs computerPlay function and returns computers random choice
 
     playerSelectionClean = playerSelection.toLowerCase().slice(0,1); //Lowercase and slices first character
@@ -46,5 +46,5 @@ function rockPaperScissors (playerSelection, computerSelection) {
 
 var listItem = document.getElementsByTagName('li')
 for (var i=0; i < listItem.length; i++) {
-    listItem[i].addEventListener("click", rockPaperScissors, false);
+    listItem[i].addEventListener("click", rockPaperScissors(this.innerHTML), false);
 }
