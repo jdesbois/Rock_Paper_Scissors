@@ -16,7 +16,8 @@ function computerPlay () { //generates random number between 1-3
 
 
 function rockPaperScissors (playerSelection, computerSelection) {
-    playerSelection = playerSelection;
+    var resultOutput = document.getElementById("result");
+    playerSelection = prompt("Rock, Paper or Scissors?");
     computerSelection = computerPlay(); //runs computerPlay function and returns computers random choice
 
     playerSelectionClean = playerSelection.toLowerCase().slice(0,1); //Lowercase and slices first character
@@ -40,11 +41,12 @@ function rockPaperScissors (playerSelection, computerSelection) {
         WinnerWinnerChickenDinner = "Computer Wins! " + computerSelection + " beats " + playerSelection;
     }
     
-    return WinnerWinnerChickenDinner; //returns outcome of round
+    resultOutput.innerHTML = WinnerWinnerChickenDinner;
+    // console.log(WinnerWinnerChickenDinner); //returns outcome of round
 
 }
 
 var listItem = document.getElementsByTagName('li')
 for (var i=0; i < listItem.length; i++) {
-    listItem[i].addEventListener("click", rockPaperScissors(this.innerHTML), false);
+    listItem[i].addEventListener("click", rockPaperScissors, false);
 }
