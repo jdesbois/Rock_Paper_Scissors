@@ -1,13 +1,14 @@
-var listItem = document.getElementsByTagName('li');
+var button = document.getElementsByTagName('button');
 var playerScore = 0;
 var computerScore = 0;
 var playerScoreElement = document.getElementById("playerScore");
 var computerScoreElement = document.getElementById("computerScore");
 computerScoreElement.innerHTML = computerScore;
 playerScoreElement.innerHTML = playerScore;
+console.log(button[1].innerHTML);
 
-for (var i=0; i < listItem.length; i++) {
-    listItem[i].addEventListener("click", rockPaperScissors, false);
+for (var i=0; i < button.length; i++) {
+    button[i].addEventListener("click", rockPaperScissors, false);
 }
 //Function to pick random number, uses number to link to R P or S
 function computerPlay () { //generates random number between 1-3
@@ -34,11 +35,8 @@ function rockPaperScissors (playerSelection, computerSelection) {
 
     playerSelectionClean = playerSelection.toLowerCase().slice(0,1); //Lowercase and slices first character
     computerSelectionClean = computerSelection.toLowerCase().slice(0,1); //Lowercase and slices first character
-    console.log(playerSelection + computerSelection);
     WinnerWinnerChickenDinner = ""; //Winner of this round variable 
     // console.log(playerSelection + "*********" + computerSelection); //output of choices (debugging)
-
-    
 
     // checks each Player win scenario if all fail then default computer win scenario
     if (playerSelectionClean == computerSelectionClean) { //checks for a draw scenario
@@ -67,8 +65,6 @@ function rockPaperScissors (playerSelection, computerSelection) {
     
     
     resultOutput.innerHTML = WinnerWinnerChickenDinner; //outputs result to the page.
-    playerSelection = "";
-    computerSelection = "";
     // console.log(WinnerWinnerChickenDinner); //returns outcome of round to console
 
 }
