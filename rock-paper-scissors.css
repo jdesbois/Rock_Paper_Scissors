@@ -9,3 +9,13 @@ li {
     color: white;
     padding: 15px; 
 }
+#game_container {
+    margin: auto;
+    width: 1000px;
+
+}
+#header_container, #player_selection_container, #result_container {
+    margin: auto;
+    width: 75%;
+    text-align: center;
+}
