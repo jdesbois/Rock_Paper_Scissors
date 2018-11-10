@@ -11,7 +11,12 @@ li {
 button {
     background-color: green;
     color: white;
-    padding: 15px; 
+    padding: 15px;
+}
+#resetButton {
+    background-color: red;
+    color: white;
+    padding: 15px;
 }
 #game_container {
     margin: auto;

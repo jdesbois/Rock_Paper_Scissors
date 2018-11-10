@@ -1,14 +1,24 @@
-var button = document.getElementsByTagName('button');
+var button = document.getElementById('player_selection_container').querySelectorAll('button');
+var resetButton = document.getElementById('resetButton');
 var playerScore = 0;
 var computerScore = 0;
 var playerScoreElement = document.getElementById("playerScore");
 var computerScoreElement = document.getElementById("computerScore");
 computerScoreElement.innerHTML = computerScore;
 playerScoreElement.innerHTML = playerScore;
-console.log(button[1].innerHTML);
 
 for (var i=0; i < button.length; i++) {
     button[i].addEventListener("click", rockPaperScissors, false);
+}
+resetButton.addEventListener("click", resetGame, false);
+console.log(resetButton);
+
+//Function to reset scores
+function resetGame () {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreElement.innerHTML = playerScore ;
+    computerScoreElement.innerHTML = computerScore;  
 }
 //Function to pick random number, uses number to link to R P or S
 function computerPlay () { //generates random number between 1-3
@@ -25,8 +35,7 @@ function computerPlay () { //generates random number between 1-3
     }
     return computerPick;
 }
-
-
+//Function that run the game
 function rockPaperScissors (playerSelection, computerSelection) {
     
     var resultOutput = document.getElementById("result");
@@ -62,7 +71,6 @@ function rockPaperScissors (playerSelection, computerSelection) {
         computerScore += 1;
         computerScoreElement.innerHTML = computerScore;
     }
-    
     
     resultOutput.innerHTML = WinnerWinnerChickenDinner; //outputs result to the page.
     // console.log(WinnerWinnerChickenDinner); //returns outcome of round to console
